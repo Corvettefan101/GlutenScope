@@ -1,0 +1,13 @@
+{
+  "name": "glutenscope-vercel-app",
+  "version": "1.0.0",
+  "description": "GlutenScope application deployed on Vercel",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No specific build step needed for static HTML + Vercel functions'",
+    "start": "vercel start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
