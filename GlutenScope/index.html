@@ -686,8 +686,8 @@
                 responseSchema: responseSchema // Send the schema
             };
 
-            // This URL is now correctly set for Vercel API routes
-            const backendApiUrl = '/api/gemini-proxy'; // Relative path for Vercel
+            // This URL is now correctly set for Cloudflare Pages Functions
+            const backendApiUrl = '/gemini-proxy'; // Relative path for Cloudflare Pages Functions
 
             try {
                 const response = await fetch(backendApiUrl, {
@@ -702,10 +702,10 @@
                     throw new Error(`Backend API call failed with status ${response.status}: ${errorBody}`);
                 }
 
-                // The Vercel function is designed to return the direct result from Gemini
+                // The Cloudflare Pages function is designed to return the direct result from Gemini
                 // which should be the `candidates[0].content.parts[0].text` as JSON.
                 // So, we can directly return the result after parsing the response body.
-                const result = await response.json(); // This will parse the JSON from the Vercel function
+                const result = await response.json(); // This will parse the JSON from the Cloudflare function
                 console.log("Gemini API raw result (via backend):", result);
                 return result; // Assuming your backend returns the parsed JSON directly
 
